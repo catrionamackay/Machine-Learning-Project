@@ -40,15 +40,15 @@ GenerateToyData=function(x,n=1000,p=NULL,seed=1,observation_consistency=FALSE){
 
 
 # Loading the original (real) data
-data=read.csv("US_births_2018.csv")
+data=read.csv("Data/US_births(2018).csv")
 
 # Make sure that ID is not one of the variables
 #rownames(data)=data$eid
 #data=data[,-1]
 
 # Generate a toy example dataset with all variables and a subset of 100 observations
-toy_data=GenerateToyData(x=data, seed=1)
-write.csv(toy_data, "Births_toy.csv")
+toy_data=GenerateToyData(x=data, n=10000, seed=5, observation_consistency = TRUE)
+write.csv(toy_data, "Data/Births_toyL.csv")
 
 # Change the seed to generate the covariate toy example dataset
 #toy_covars=GenerateToyData(x=covars, seed=2, observation_consistency=TRUE)
