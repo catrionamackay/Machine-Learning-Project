@@ -5,9 +5,6 @@ from sklearn.impute import KNNImputer
 
 df = pd.read_csv('Data/Processed_data_full.csv', index_col=[0], low_memory=False)
 
-df = df.drop(['marital_stat'], axis=1)
-
-
 KNN_imputer = KNNImputer(n_neighbors=5)
 df_KNN = pd.DataFrame(KNN_imputer.fit_transform(df))
 
